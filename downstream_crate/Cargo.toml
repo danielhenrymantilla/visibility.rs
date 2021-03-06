@@ -1,0 +1,18 @@
+[lib]
+path = "lib.rs"
+
+[package]
+name = "my_crate"
+version = "0.1.0"
+authors = ["Daniel Henry-Mantilla <daniel.henry.mantilla@gmail.com>"]
+edition = "2018"
+
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
+
+[dependencies]
+visibility = { path = ".." }
+
+[features]
+integration-tests = []
+
+[workspace]
