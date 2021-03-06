@@ -17,6 +17,7 @@ jobs:
           - 1.43.0
           - stable
           - beta
+        cargo-locked: ["--locked", ""]
     steps:
       - name: Install Rust toolchain
         uses: actions-rs/toolchain@v1
@@ -28,10 +29,15 @@ jobs:
       - name: Clone repo
         uses: actions/checkout@v2
 
+      - name: Update `Cargo.lock`
+        if: ${{ matrix.cargo-locked }} != "--locked"
+        run: cargo update
+
       - name: Cargo check
         uses: actions-rs/cargo@v1
         with:
           command: check
+          args: ${{ matrix.cargo-locked }}
 
   # == BUILD & TEST == #
   build-and-test:
