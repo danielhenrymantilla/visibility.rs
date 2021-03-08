@@ -30,7 +30,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Update `Cargo.lock`
-        if: ${{ matrix.cargo-locked }} != "--locked"
+        if: matrix.cargo-locked != '--locked'
         run: cargo update
 
       - name: Cargo check
