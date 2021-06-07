@@ -40,10 +40,16 @@ jobs:
         if: matrix.cargo-locked != '--locked'
         run: cargo update
 
-      - name: Cargo test
+      - name: Cargo test (nightly)
+        if: matrix.rust-toolchains == 'nightly'
         uses: actions-rs/cargo@v1
-        env:
-          RUSTC_BOOTSTRAP: "1"
         with:
           command: test
           args: ${{ matrix.cargo-locked }} --features nightly
+
+      - name: Cargo test
+        if: matrix.rust-toolchains != 'nightly'
+        uses: actions-rs/cargo@v1
+        with:
+          command: test
+          args: ${{ matrix.cargo-locked }}

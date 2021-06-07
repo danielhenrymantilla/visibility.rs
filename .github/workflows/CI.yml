@@ -54,6 +54,7 @@ jobs:
         rust-toolchains:
           - 1.43.0
           - stable
+          - nightly
     steps:
       - name: Install Rust toolchain
         uses: actions-rs/toolchain@v1
@@ -65,10 +66,15 @@ jobs:
       - name: Clone repo
         uses: actions/checkout@v2
 
-      - name: Cargo test
+      - name: Cargo test (nightly)
+        if: matrix.rust-toolchains == 'nightly'
         uses: actions-rs/cargo@v1
-        env:
-          RUSTC_BOOTSTRAP: "1"
         with:
           command: test
           args: --features nightly
+
+      - name: Cargo test
+        if: matrix.rust-toolchains != 'nightly'
+        uses: actions-rs/cargo@v1
+        with:
+          command: test
