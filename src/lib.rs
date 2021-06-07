@@ -1,8 +1,7 @@
 #![forbid(unsafe_code)]
 #![allow(nonstandard_style, unused_imports)]
 #![cfg_attr(feature = "nightly",
-    feature(external_doc),
-    doc(include = "../README.md"),
+    cfg_attr(all(), doc = include_str!("../README.md")),
 )]
 
 extern crate proc_macro;
