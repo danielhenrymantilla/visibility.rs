@@ -3,11 +3,11 @@ proc-macro = true
 
 [package]
 name = "visibility"
-version = "0.0.1"
+version = "0.1.0"
 authors = [
     "Daniel Henry-Mantilla <daniel.henry.mantilla@gmail.com>",
 ]
-edition = "2018"
+edition = "2021"
 
 license = "Zlib OR MIT OR Apache-2.0"
 
@@ -31,9 +31,9 @@ categories = [
 ]
 
 [dependencies]
-syn = { version = "1.0.0", features = ["full"] }
-quote = "1.0.0"
-proc-macro2 = "1.0.0"
+syn = { version = "2.0.0", features = ["full"] }
+quote = "1.0.26"
+proc-macro2 = "1.0.60"
 
 [features]
 nightly = []

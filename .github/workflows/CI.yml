@@ -14,7 +14,7 @@ jobs:
     strategy:
       matrix:
         rust-toolchains:
-          - 1.43.0
+          - 1.56.0
           - stable
           - beta
         cargo-locked: ["--locked", ""]
@@ -52,7 +52,7 @@ jobs:
           - macos-latest
           - windows-latest
         rust-toolchains:
-          - 1.43.0
+          - 1.56.0
           - stable
           - nightly
     steps:

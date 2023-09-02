@@ -64,7 +64,6 @@ fn make (attrs: TokenStream, input: TokenStream)
         // | Item::ForeignMod(ItemForeignMod { ref mut vis, .. }) => *vis = visibility,
         // | Item::Impl(ItemImpl { ref mut vis, .. }) => *vis = visibility,
         // | Item::Macro(ItemMacro { ref mut vis, .. }) => *vis = visibility,
-        | Item::Macro2(ItemMacro2 { ref mut vis, .. }) => *vis = visibility,
         | Item::Mod(ItemMod { ref mut vis, .. }) => *vis = visibility,
         | Item::Static(ItemStatic { ref mut vis, .. }) => *vis = visibility,
         | Item::Struct(ItemStruct { ref mut vis, .. }) => *vis = visibility,
