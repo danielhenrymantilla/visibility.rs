@@ -3,7 +3,7 @@
 [![Repository](https://img.shields.io/badge/repository-GitHub-brightgreen.svg)](https://github.com/danielhenrymantilla/visibility.rs)
 [![Latest version](https://img.shields.io/crates/v/visibility.svg)](https://crates.io/crates/visibility)
 [![Documentation](https://docs.rs/visibility/badge.svg)](https://docs.rs/visibility)
-[![MSRV](https://img.shields.io/badge/MSRV-1.43.0-white)](https://gist.github.com/danielhenrymantilla/8e5b721b3929084562f8f65668920c33)
+[![MSRV](https://img.shields.io/badge/MSRV-1.56.0-white)](https://gist.github.com/danielhenrymantilla/8e5b721b3929084562f8f65668920c33)
 [![unsafe forbidden](https://img.shields.io/badge/unsafe-forbidden-success.svg)](https://github.com/rust-secure-code/safety-dance/)
 [![License](https://img.shields.io/crates/l/visibility.svg)](https://github.com/danielhenrymantilla/visibility.rs/blob/master/LICENSE)
 [![CI](https://github.com/danielhenrymantilla/visibility.rs/workflows/CI/badge.svg)](https://github.com/danielhenrymantilla/visibility.rs/actions)
