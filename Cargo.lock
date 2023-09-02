@@ -39,7 +39,7 @@ checksum = "301abaae475aa91687eb82514b328ab47a211a533026cb25fc3e519b86adfc3c"
 
 [[package]]
 name = "visibility"
-version = "0.1.0-rc1"
+version = "0.1.0"
 dependencies = [
  "proc-macro2",
  "quote",

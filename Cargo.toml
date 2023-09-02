@@ -3,7 +3,7 @@ proc-macro = true
 
 [package]
 name = "visibility"
-version = "0.1.0-rc1"
+version = "0.1.0"
 authors = [
     "Daniel Henry-Mantilla <daniel.henry.mantilla@gmail.com>",
 ]
