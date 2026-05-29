@@ -25,7 +25,7 @@ jobs:
         cargo-locked: ["--locked", ""]
         exclude:
           # MSRV guarantee only stands for `.lock`-tested dependencies.
-          - rust-toolchain: beta
+          - rust-toolchain: 1.56.0
             cargo-locked: ''
     steps:
       - name: Install Rust toolchain
