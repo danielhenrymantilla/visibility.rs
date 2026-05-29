@@ -20,36 +20,31 @@ jobs:
           - macos-latest
           - windows-latest
         rust-toolchains:
-          - 1.56.0
-          - stable
+        rust-toolchain:
+          # Future-proof against compiler-regressions
           - beta
           - nightly
         cargo-locked: ["--locked", ""]
+        include:
+          # Also future-proof against semver breakage from dependencies.
+          # (But we don't have any dependencies yet, so don't actually run this.)
+          # - os: ubuntu-latest
+          #   rust-toolchain: stable
+          #   cargo-locked: ''
     steps:
       - name: Install Rust toolchain
-        uses: actions-rs/toolchain@v1
-        with:
-          profile: default
-          override: true
-          toolchain: ${{ matrix.rust-toolchains }}
+        run: |
+          rustup toolchain install "${{ matrix.rust-toolchain }}"
+          rustup override set "${{ matrix.rust-toolchain }}"
 
       - name: Clone repo
         uses: actions/checkout@v2
 
       - name: Update `Cargo.lock`
         if: matrix.cargo-locked != '--locked'
-        run: cargo update
-
-      - name: Cargo test (nightly)
-        if: matrix.rust-toolchains == 'nightly'
-        uses: actions-rs/cargo@v1
-        with:
-          command: test
-          args: ${{ matrix.cargo-locked }} --features nightly
+        run: cargo update -v
 
       - name: Cargo test
-        if: matrix.rust-toolchains != 'nightly'
-        uses: actions-rs/cargo@v1
-        with:
-          command: test
-          args: ${{ matrix.cargo-locked }}
+        env:
+          RUSTC_BOOTSTRAP: 1
+        run: cargo test ${{ matrix.cargo-locked }} --features nightly
