@@ -57,7 +57,7 @@ jobs:
           - ubuntu-latest
           - macos-latest
           - windows-latest
-        rust-toolchains:
+        rust-toolchain:
           - 1.56.0
           - stable
     steps:
